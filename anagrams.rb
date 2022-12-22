@@ -1,11 +1,10 @@
 
-#O(n) because only iterating once (n + n) = O(n)
+#O(n!) 
 def first_anagram?(string1,string2)
-letters1= Hash.new(0)
-letters2= Hash.new(0)
-    string1.each_char {|char|letters1[char]+=1}
-    string2.each_char {|char| letters2[char]+=1}
-    letters1==letters2
+    arr1= string1.split("")
+    arr2 = string2.split("")
+    anag = arr1.permutation(arr1.length)
+    anag.include?(arr2)
 end
 
 #O(n^3)
@@ -51,5 +50,5 @@ def fifth_anagram?(string1, string2)
 end
 
 
-p fifth_anagram?("gizmo", "sally")    #=> false
-p fifth_anagram?("elvis", "lives")    #=> true
+p first_anagram?("gizmo", "sally")    #=> false
+p first_anagram?("elvis", "lives")    #=> true
