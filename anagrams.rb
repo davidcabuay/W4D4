@@ -25,7 +25,7 @@ def third_anagram?(string1, string2)
     first = string1.split("")
     second = string1.split("")
     f = first.sort 
-    s= second.sort
+    s = second.sort
     f == s
     # string1.split("").sort == string2.split("").sort  
 end
@@ -52,4 +52,4 @@ end
 
 
 p fifth_anagram?("gizmo", "sally")    #=> false
-p fifth_anagram?("elllvis", "lllives")    #=> true
+p fifth_anagram?("elvis", "lives")    #=> true
