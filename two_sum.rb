@@ -25,12 +25,23 @@ def okay_two_sum?(arr, target_sum)
     return false
 end
 
+# time O(n)      space O(n)
+def two_sum?(arr, target_sum)
+    hash= {}
+    arr.each do |ele|
+        if hash[target_sum - ele]
+            return true
+        else
+            hash[ele]=true
+        end
+    end
+    return false
+end
 
-def 
-
+hash = {0=>true, 1=>true,}
 arr = [0, 1, 5, 7]
-p okay_two_sum?(arr, 6) # => should be true
-p okay_two_sum?(arr, 10) # => should be false
+p two_sum?(arr, 6) # => should be true
+p two_sum?(arr, 10) # => should be false
 
 
 
